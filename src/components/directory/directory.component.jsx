@@ -52,7 +52,7 @@ class Directory extends Component {
             )
 
             )
-            };
+            }
         </div>
     );
     }
