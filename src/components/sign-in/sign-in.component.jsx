@@ -6,6 +6,7 @@ import './sign-in.styles.scss';
 import CustomButton from '../custom-button/custom-button.component';
 
 import { SignInWithGoogle } from '../../firebase/firebase.utils';
+import { auth } from 'firebase';
 
 class SignIn extends Component {
     constructor(){
@@ -18,6 +19,8 @@ class SignIn extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        const { email, password } = this.state;
+        auth().signInWithEmailAndPassword(email, password).catch(error => alert(error));
         this.setState({email: '', password: ''});
     }
 

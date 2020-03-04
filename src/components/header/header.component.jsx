@@ -16,8 +16,11 @@ const Header = ({currentUser}) => {
                 <Link className='option' to='/contact' >CONTACT</Link>
 
             {
-                currentUser ?
-                    <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+                currentUser ? 
+                    <div>
+                    <div className='display-name'>{currentUser.displayName} </div>
+                   <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+                    </div>
                 :
                     <Link className='option' to='/signin'></Link>
             }
@@ -29,4 +32,4 @@ const Header = ({currentUser}) => {
 
 }
 
-export default Header;
+export default Header;  
