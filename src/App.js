@@ -6,6 +6,7 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth } from './firebase/firebase.utils';
 import { createUserProfileDocument } from './firebase/firebase.utils';
+
 import Header from './components/header/header.component';
 class App extends Component {
   constructor(){
@@ -31,8 +32,7 @@ class App extends Component {
               });
             });
           }
-          this.setState({currentUser: userAuth});
-          
+
           
       });
   }
@@ -44,7 +44,7 @@ class App extends Component {
   render () {  
     return (
     <div > 
-      <Header currentUser={this.state.currentUser} />
+      <Header  />
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route path='/shop' component={ShopPage}/>
