@@ -27,7 +27,9 @@ const Checkout = ({cartItems, total}) => (
 
         </div>
         {
-            cartItems.map(item => <CheckoutItem item={item} />)
+            cartItems.map(item => 
+            <CheckoutItem key={item.id} item={item} />
+            )
         }
         <div className='total'>
             <span>TOTAL: ${total}</span>
@@ -40,8 +42,6 @@ const mapStateToProps = createStructuredSelector ({
     cartItems: selectCartItems,
     total: selectCartItemsTotal
 });
-
-const mapDispatchToProps = dispatch => dispatch();
 
 export default connect(mapStateToProps)(Checkout);
 
