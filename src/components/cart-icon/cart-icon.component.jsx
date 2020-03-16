@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './cart-icon.styles.scss';
 import { ReactComponent as ShoppingIcon } from  '../../assets/shopping-bg.svg';
 import { connect } from 'react-redux';
